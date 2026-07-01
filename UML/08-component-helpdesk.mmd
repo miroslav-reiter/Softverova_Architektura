@@ -1,0 +1,25 @@
+flowchart TB
+    ui[Helpdesk UI]
+    gw[API Gateway]
+
+    subgraph services
+      ticket[Ticket Service]
+      user[User Service]
+      sla[SLA Service]
+      kb[Knowledge Base]
+      notify[Notification Service]
+    end
+
+    db[(Database)]
+
+    ui --> gw
+    gw --> ticket
+    gw --> user
+    ticket --> sla
+    ticket --> kb
+    ticket --> notify
+    ticket --> db
+    user --> db
+    sla --> db
+    kb --> db
+    notify --> db
