@@ -1,0 +1,32 @@
+flowchart LR
+    customer[Zákazník]
+    admin[Administrátor]
+    payment[Platobná brána]
+    email[E-mailový systém]
+
+    subgraph eshop[E-shop systém]
+      uc1((Registrovať sa))
+      uc2((Prihlásiť sa))
+      uc3((Prezerať produkty))
+      uc4((Vyhľadávať produkty))
+      uc5((Pridať do košíka))
+      uc6((Vytvoriť objednávku))
+      uc7((Zaplatiť objednávku))
+      uc8((História objednávok))
+    end
+
+    customer --> uc1
+    customer --> uc2
+    customer --> uc3
+    customer --> uc4
+    customer --> uc5
+    customer --> uc6
+    customer --> uc7
+    customer --> uc8
+
+    admin --> uc3
+    admin --> uc6
+
+    uc6 --> uc7
+    uc7 --> payment
+    uc6 --> email
