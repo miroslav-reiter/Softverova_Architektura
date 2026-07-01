@@ -1,0 +1,32 @@
+flowchart TB
+    internet[Internet]
+    lb[Load Balancer]
+
+    subgraph web[Frontend Cluster]
+      w1[Web Node 1]
+      w2[Web Node 2]
+    end
+
+    subgraph api[Backend Cluster]
+      a1[API Node 1]
+      a2[API Node 2]
+    end
+
+    subgraph data[Data Layer]
+      db[(PostgreSQL)]
+      cache[(Redis)]
+    end
+
+    ext[External Services]
+
+    internet --> lb
+    lb --> w1
+    lb --> w2
+    w1 --> a1
+    w2 --> a2
+    a1 --> db
+    a2 --> db
+    a1 --> cache
+    a2 --> cache
+    a1 --> ext
+    a2 --> ext
