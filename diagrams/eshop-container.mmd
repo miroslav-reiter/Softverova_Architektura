@@ -1,0 +1,13 @@
+flowchart LR
+    User[Používateľ]
+    Frontend[Frontend Web App]
+    API[Backend API]
+    DB[(Databáza)]
+    Payment[Platobná brána]
+    Email[E-mailová služba]
+
+    User --> Frontend
+    Frontend --> API
+    API --> DB
+    API --> Payment
+    API --> Email
