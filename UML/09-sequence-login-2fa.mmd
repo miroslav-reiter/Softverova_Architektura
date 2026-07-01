@@ -1,0 +1,23 @@
+sequenceDiagram
+    actor U as User
+    participant F as Frontend
+    participant A as Auth Service
+    participant DB as User DB
+    participant T as 2FA Service
+    participant S as Session
+
+    U->>F: login
+    F->>A: auth request
+    A->>DB: verify credentials
+    DB-->>A: OK
+    A->>T: 2FA challenge
+    T-->>A: sent
+    A-->>F: request 2FA code
+    U->>F: enter code
+    F->>A: verify
+    A->>T: validate
+    T-->>A: OK
+    A->>S: create session
+    S-->>A: token
+    A-->>F: success
+    F-->>U: logged in
