@@ -1,0 +1,13 @@
+flowchart TD
+    A[Start] --> B[Validácia objednávky]
+    B --> C{Platná?}
+    C -- Nie --> D[Zrušiť objednávku]
+    C -- Áno --> E[Spustiť platbu]
+    E --> F[Payment Gateway]
+    F --> G{Úspech?}
+    G -- Áno --> H[Potvrdiť objednávku]
+    G -- Nie --> I[Zlyhanie platby]
+    H --> J[Notifikácia]
+    I --> J
+    J --> K[End]
+    D --> K
