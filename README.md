@@ -1,6 +1,6 @@
 # 🧩 Softvérová Architektúra
 
-Tréingový repozitár k online kurzu **Softvérová Architektúra I. Začiatočník**.
+Tréningový repozitár k online kurzu **Softvérová Architektúra I. Začiatočník**.
 
 Repozitár slúži na praktické precvičovanie základných architektonických pojmov, modelov, diagramov, rozhodnutí a návrhov systémov. Je určený pre začiatočníkov, junior analytikov, vývojárov, testerov, DevOps, IT konzultantov a všetkých, ktorí sa chcú naučiť rozmýšľať nad softvérom ako nad systémom, nie iba ako nad kódom.
 
