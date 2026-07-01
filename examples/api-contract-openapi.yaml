@@ -1,0 +1,25 @@
+openapi: 3.0.3
+info:
+  title: E-shop API
+  version: 1.0.0
+  description: Jednoduchy API kontrakt pre trening softverovej architektury.
+servers:
+  - url: https://api.example.com
+paths:
+  /products:
+    get:
+      summary: Zoznam produktov
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Vytvorenie produktu
+      responses:
+        '201':
+          description: Produkt vytvoreny
+  /orders:
+    post:
+      summary: Vytvorenie objednavky
+      responses:
+        '201':
+          description: Objednavka vytvorena
