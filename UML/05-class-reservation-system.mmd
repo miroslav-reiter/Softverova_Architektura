@@ -1,0 +1,34 @@
+classDiagram
+    class User {
+      +id
+      +name
+      +email
+    }
+
+    class Customer
+    class Admin
+
+    class Reservation {
+      +id
+      +dateFrom
+      +dateTo
+      +status
+    }
+
+    class Room {
+      +id
+      +name
+      +capacity
+    }
+
+    class Payment {
+      +id
+      +amount
+      +status
+    }
+
+    User <|-- Customer
+    User <|-- Admin
+    Customer --> Reservation
+    Reservation --> Room
+    Reservation --> Payment
