@@ -1,0 +1,13 @@
+flowchart LR
+    Customer[Zákazník]
+    Admin[Administrátor]
+    Shop[E-shop systém]
+    Payment[Platobná brána]
+    Email[E-mailová služba]
+    ERP[ERP systém]
+
+    Customer --> Shop
+    Admin --> Shop
+    Shop --> Payment
+    Shop --> Email
+    Shop --> ERP
