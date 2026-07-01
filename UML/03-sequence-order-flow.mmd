@@ -1,0 +1,21 @@
+sequenceDiagram
+    actor Z as Zákazník
+    participant F as Frontend
+    participant G as API Gateway
+    participant O as Order Service
+    participant P as Product Service
+    participant DB as Database
+    participant Pay as Payment Service
+    participant N as Notification Service
+
+    Z->>F: Klikne "Kúpiť"
+    F->>G: POST /orders
+    G->>O: createOrder()
+    O->>P: overenie dostupnosti
+    P-->>O: OK
+    O->>DB: uloženie objednávky
+    O->>Pay: autorizácia platby
+    Pay-->>O: výsledok
+    O->>N: notifikácia
+    O-->>G: potvrdenie
+    G-->>F: 201 Created
