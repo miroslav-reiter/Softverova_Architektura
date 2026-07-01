@@ -1,0 +1,27 @@
+flowchart TB
+    frontend[Frontend Web / Mobile]
+    gateway[API Gateway]
+
+    subgraph services[Služby]
+        product[Product Service]
+        order[Order Service]
+        user[User Service]
+        payment[Payment Service]
+        notify[Notification Service]
+    end
+
+    subgraph data[Data Layer]
+        db[(Database)]
+    end
+
+    frontend --> gateway
+    gateway --> product
+    gateway --> order
+    gateway --> user
+    order --> payment
+    order --> notify
+    product --> db
+    order --> db
+    user --> db
+    payment --> db
+    notify --> db
